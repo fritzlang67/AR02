@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My HTML Page</title>
-
 <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+ <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
 
- </head>
+</head>
 
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
 
       <!--  <a-marker-camera preset='hiro'></a-marker-camera>  -->
 
-      <a-marker preset="pattern" type="pattern" url=’pattern-ar02.patt’></a-marker>
+      <a-marker-camera type=’pattern’  preset='pattern' url=’pattern-ar02.patt’></a-marker-camera>
+<!--
+      <a-marker preset="pattern" type="pattern"
+    url=’https://raw.githubusercontent.com/fritzlang67/AR02/main/pattern-ar02.patt’></a-marker>
+    -->
       <a-assets>
         <a-asset-item id="bird" response-type="arraybuffer" src="fox.glb"></a-asset-item>
       </a-assets>
-<!--
-      <a-entity gltf-model="#bird" scale="0.01 0.01 0.01"
-     ></a-entity>
--->
-<a-entity gltf-model="#bird" position = " 0 0 0.5 " scale="1 1 1 " rotation="270 0 0"
-animation-mixer="clip: * ; loop: repeat"></a-entity>
 
+     <a-entity gltf-model="#bird" position = " 0 0 0.5 " scale="0.5 0.5 0.5" rotation="270 0 0"
+        animation-mixer="clip: * ; loop: repeat"></a-entity>
 
-
-
-<a-entity camera></a-entity>
-	</a-scene>
+  <!--      <a-entity camera></a-entity> -->
+      </a-scene>
 clip:Take 001;
 
 
 
 
 </body>
-
-
 </html>
